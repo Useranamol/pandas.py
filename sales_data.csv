@@ -1,0 +1,11 @@
+Order_ID,Product_ID,Product_Name,Category,Sub_Category,Quantity,Price,Discount,Order_Date,Region,Customer_Segment
+1,121,Chair,Clothing,Phones,4,170.42288303704373,0.01540804337762548,2023-01-01,West,Corporate
+2,119,Phone,Electronics,Tables,3,303.6157148831556,0.10218487545488801,2023-01-02,South,Corporate
+3,179,Phone,Electronics,Laptops,3,463.7656745205994,0.151745156940912,2023-01-03,West,Consumer
+4,168,Table,Electronics,Chairs,4,335.4555434952543,0.10057521240111547,2023-01-04,North,Home Office
+5,108,Laptop,Electronics,Chairs,2,122.4403265716155,0.2514756711799808,2023-01-05,West,Home Office
+6,163,Laptop,Clothing,Tables,3,444.16015137167415,0.027758907270409795,2023-01-06,West,Corporate
+7,136,Table,Electronics,Chairs,1,377.89989926181903,0.2940183339234267,2023-01-07,North,Consumer
+8,188,Laptop,Furniture,Laptops,3,162.99137736130933,0.18193972863740257,2023-01-08,South,Consumer
+9,181,Phone,Furniture,Phones,1,78.23088645415862,0.2670273074265507,2023-01-09,North,Corporate
+10,189,Laptop,Electronics,Phones,1,291.63374334483643,0.11134315689063876,2023-01-10,East,Consumer

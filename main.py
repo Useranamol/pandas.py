@@ -1,37 +1,38 @@
 import pandas as pd
 
+# Example DataFrame (with some issues)
 data = {
-    "Product_Id" : [101 , 102,  103 , 104 , 105 ],
-    "Category"  : [ "electronics" , "clothing ", "Furniture" , "Groceris","Facny_items"],
-    "Price" : [ 150 , 80 , 200 , 300 , 50],
-    "stocks" : [ 30 ,100 , 20 , 15 , 200],
-    "sales" : [ 200 , 150, 100, 50 , 120]
-
- }
+    "Product_Id": [101, 102, 103, 104, 105, 106],
+    "Category": ["electronics", "clothing ", "Furniture", None, "Facny_items", "electronics"],
+    "Price": [150, 80, 200, 300, None, 150],
+    "stocks": [30, 100, 20, 15, 200, 30],
+    "sales": [200, 150, 100, 50, 120, None]
+}
 
 df = pd.DataFrame(data)
 
-head = df.head(10)
-sub_set = df[["Product_Id" , "Price"]]
-df.set_index( "Product_Id" , inplace = True)
 
-# print(head)
-# print(sub_set)
-# Filter by Category
-electronics = df[df['Category'] == 'Electronics']
+missing_values = df.isnull().sum()
 
-# Filter by Price
-expensive_products = df[df['Price'] > 100]
-
-# Display the results
-print(electronics)
-print(expensive_products)
-
-df.reset_index(inplace= True)
-
-df.iloc[ :5 , :3]
-# Display the results
+df['Price'].fillna(df['Price'].median(), inplace=True)
 
 
+df.dropna(subset=['Category'], inplace=True)
 
-print(sub_set)
+df['Price'] = df['Price'].astype(float)
+df['sales'] = df['sales'].astype(float)
+
+
+df['Category'] = df['Category'].astype('category')
+
+df['Category'] = df['Category'].str.strip().str.lower().str.capitalize()
+
+
+df.drop_duplicates(inplace=True)
+
+
+df.rename(columns={'stocks': 'Stock'}, inplace=True)
+
+
+# print(df)
+print(missing_values)
