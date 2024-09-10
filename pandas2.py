@@ -33,7 +33,7 @@ total_revenue = df['Revenue'].sum()
 
 
 
-# print("Total revenue : $" , total_revenue)
+print("Total revenue : $" , total_revenue)
 
 
 average_price = df['Price'].mean()
@@ -150,7 +150,7 @@ different_agg = df.groupby('Category').agg({
 
 df['Cumulative_Revenue'] = df['Revenue'].cumsum()
 
-print(df[['Order_Date', 'Revenue', 'Cumulative_Revenue']])
+# print(df[['Order_Date', 'Revenue', 'Cumulative_Revenue']])
 
 
 
