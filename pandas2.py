@@ -19,6 +19,7 @@ data = {
 df = pd.DataFrame(data)
 
 
+
 # print(df.head(10))
 
 
@@ -26,14 +27,16 @@ df.to_csv("sales_data.csv", index=False)
 
 df = pd.read_csv("sales_data.csv")
 
+
+
 df['Revenue'] = df['Quantity'] * df['Price'] * (1 - df['Discount'])
 
-total_revenue = df['Revenue'].sum()
+# total_revenue = df['Revenue'].sum()
 
 
 
 
-print("Total revenue : $" , total_revenue)
+# print("Total revenue : $" , total_revenue)
 
 
 average_price = df['Price'].mean()
@@ -92,7 +95,7 @@ Aggregration_products = df.groupby('Product_Name').agg({
 # print(Aggregration_products)
 
 pivot_table_revenue = pd.pivot_table(df, values='Revenue', index='Region', columns='Category', aggfunc='sum')
-# print(pivot_table_revenue)
+print(pivot_table_revenue)
 
 df['Order_Date'] = pd.to_datetime(df['Order_Date'])
 

@@ -91,7 +91,21 @@ new_sales_df = pd.DataFrame(new_sales_data)
 
 
 concatenated_sales = pd.concat([sales_data_df, new_sales_df], ignore_index=True)
-print(concatenated_sales)
+# print(concatenated_sales)
+
+
+new_product_details = {
+    'Product_ID': [110, 111],
+    'Product_Description': ['Bluetooth speaker', 'Noise-canceling headphones'],
+    'Supplier': ['Supplier I', 'Supplier J'],
+    'Manufacturing_Date': ['2022-10-01', '2022-11-01']
+}
+
+new_product_df = pd.DataFrame(new_product_details)
+
+
+concatenated_products = pd.concat([product_df, new_product_df], ignore_index=True)
+print(concatenated_products)
 
 
 
